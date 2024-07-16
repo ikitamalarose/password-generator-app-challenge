@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Password generator app</title>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- Title Section -->
+    <header>
+      <p class="title">Password Generator</p>
+    </header>
+
+    <!-- Password Display Section -->
+
+
+    <section class="card__header">
+      <p class="header-textField"> P4$5W0rD!</p>
+      <button class="header-icon-button">
+        <img src="./assets/images/icon-copy.svg" alt="Copy icon" class="header-icon">
+      </button>
+    </section>
+
+    <!-- Main Content Section -->
+    <main class="card__content">
+
+      <!-- Slider Component -->
+      <div class="sliderComponent">
+
+        <div class="sliderComponent__header">
+          <p class="sliderComponent__label">Character Length</p>
+          <p class="sliderComponent__length">10</p>
+        </div>
+
+        <div class="sliderComponent__body">
+          <!-- Custom slider will be implemented here -->
+        </div>
+
+      </div>
+
+      <!-- Checkbox Options -->
+      <div class="checkboxStates">
+
+        <!-- uppercase option -->
+        <div class="checkboxStates-form-group">
+          <button type="button" class="checkboxStates-button" id="uppercase">
+            <img src="./assets/images/icon-check.svg" alt="icon check" class="checkboxStates-icon">
+          </button>
+          Include Uppercase Letters
+        </div>
+
+        <!-- lowercase option -->
+        <div class="checkboxStates-form-group">
+          <button type="button" class="checkboxStates-button" id="lowercase">
+            <img src="./assets/images/icon-check.svg" alt="icon check" class="checkboxStates-icon">
+          </button>
+          Include Lowercase Letters
+        </div>
+
+        <!-- number option -->
+        <div class="checkboxStates-form-group">
+          <button type="button" class="checkboxStates-button" id="number">
+            <img src="./assets/images/icon-check.svg" alt="icon check" class="checkboxStates-icon">
+          </button>
+          Include Numbers
+        </div>
+
+        <!-- symbol option -->
+        <div class="checkboxStates-form-group">
+          <button type="button" class="checkboxStates-button" id="symbol">
+            <img src="./assets/images/icon-check.svg" alt="icon check" class="checkboxStates-icon">
+          </button>Include Symbols
+        </div>
+
+      </div>
+
+
+      <!-- Strength Indicator -->
+      <div class="strengthComponent">
+        <p class="strengthComponent__label">Strength</p>
+
+        <div class="strengthComponent__states">
+
+          <p class="strengthComponent__indicator">Medium</p>
+
+          <div class="strength__state strength__state-red" id="too_weak"></div>
+          <div class="strength__state strength__state-orange" id="weak"></div>
+          <div class="strength__state strength__state-yellow" id="medium"></div>
+          <div class="strength__state strength__state-green" id="strong"></div>
+
+        </div>
+
+      </div>
+
+      <!-- Generate Button -->
+      <button type="button" class="generate-button">
+        Generate <img src="./assets/images/icon-arrow-right.svg" alt="Arrow right icon">
+      </button>
+    </main>
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
