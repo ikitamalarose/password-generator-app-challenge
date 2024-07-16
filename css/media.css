@@ -1,0 +1,218 @@
+/* MOBILE */
+@media (max-width: 768px) {
+  body {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 21.438rem;
+    height: 33.75rem;
+
+    margin-top: 10rem;
+
+    
+  }
+
+  .title {
+    font-size: 1rem;
+    color: var(--grey);
+    text-align: center;
+
+    margin-bottom: 1rem;
+  }
+
+  .card__header {
+    background: var(--dark-grey);
+    height: 4rem;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .header-icon-button {
+    background: none;
+    border: none;
+    text-align: center;
+  }
+
+  .header-icon {
+    width: 1.094rem;
+    height: 1.25rem;
+  }
+
+  /* main content start*/
+
+  .card__content {
+    background: var(--dark-grey);
+    padding: 1rem;
+  }
+
+  /* slider component start */
+
+  .sliderComponent {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+  }
+
+  .sliderComponent__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin-bottom: 0.5rem;
+  }
+
+  .sliderComponent__length {
+    color: var(--neon-green);
+  }
+
+  /* slider component end */
+
+  /* checkbox option start */
+
+  .checkboxStates {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 2rem;
+  }
+
+  .checkboxStates-form-group {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .checkboxStates-form-group:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
+  .checkboxStates-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--neon-green);
+
+    width: 1.25rem;
+    height: 1.25rem;
+
+    border: 0.125rem solid var(--almost-white);
+
+    margin-right: 1.25rem;
+  }
+
+  .checkboxStates-icon {
+    width: 0.699rem;
+    height: 0.5rem;
+  }
+  /* checkbox option end */
+
+  /* strength indicator start */
+
+  .strengthComponent {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    align-items: center;
+
+    background: var(--very-dark-grey);
+
+    height: 4.5rem;
+
+    padding: 1.313rem;
+  }
+
+  .strengthComponent__label {
+    color: var(--grey);
+    text-transform: uppercase;
+
+    width: max-content;
+  }
+
+  .strengthComponent__states {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+  }
+
+  .strengthComponent__indicator {
+    text-transform: uppercase;
+    margin-right: 0.969rem;
+    width: max-content;
+  }
+
+  .strengthComponent__buttons {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .strength__state {
+    width: 0.625rem;
+    height: 1.75rem;
+
+    border: 1px solid var(--almost-white);
+    background: none;
+  }
+
+  .strength__state:not(:last-child) {
+    margin-right: 0.5rem;
+  }
+
+  .strength__state-red {
+    background: var(--red);
+  }
+
+  .strength__state-orange {
+    background: var(--orange);
+  }
+
+  .strength__state-yellow {
+    background: var(--yellow);
+  }
+
+  .strength__state-green {
+    background: var(--neon-green);
+  }
+  /* strength indicator end */
+
+  /* generate button */
+  .generate-button {
+    width: 19.438rem;
+    height: 3.5rem;
+
+    background: var(--neon-green);
+    border: none;
+
+    color: var(--dark-grey);
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .generate-icon {
+    width: 0.694rem;
+    height: 0.75rem;
+
+    margin-left: 1.5rem;
+  }
+  /* main content end */
+}
