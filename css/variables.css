@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+
+:root {
+  /* colors */
+
+  /* Primary */
+  --red: #F64A4A;
+  --orange: #FB7C58;
+  --yellow: #F8CD65;
+  --neon-green: #A4FFAF;
+
+  /* Neutral */
+  --almost-white:#E6E5EA;
+  --grey:#817D92;
+  --dark-grey:#24232C;
+  --very-dark-grey:#18171F;
+
+  /* Typography */
+  --body-font-family: "JetBrains Mono", monospace;
+  --body-font-size: 18px;
+  --body-font-weight: Bold;
+  --body-line-height: 23px;
+
+  --title-font-size: 32px;
+  --title-font-weight: Bold;
+  --title-line-height: 43px;
+
+  --subtitle-font-size: 24px;
+  --subtitle-font-weight: Bold;
+  --subtitle-line-height: 31px;
+}
