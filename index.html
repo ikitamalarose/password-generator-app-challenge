@@ -7,6 +7,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="./main.css">
+  <script defer type="module" src="./main.js"></script>
 
   <title>Frontend Mentor | Password generator app</title>
 </head>
@@ -37,13 +38,13 @@
 
         <div class="sliderComponent__header">
           <p class="sliderComponent__label">Character Length</p>
-          <p class="sliderComponent__length">10</p>
+          <p class="sliderComponent__length" id="slider-length">10</p>
         </div>
 
         <div class="sliderComponent__body">
 
-          <div class="sliderComponent-bar"></div>
-          <div class="sliderComponent-button"></div>
+          <div class="sliderComponent-bar" id="slider-bar"></div>
+          <div class="sliderComponent-button" id="slider-button"></div>
         </div>
 
       </div>
