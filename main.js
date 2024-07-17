@@ -5,23 +5,24 @@ const sliderBody = document.querySelector('.sliderComponent__body');
 
 let isDragging = false;
 
-sliderButton.addEventListener('mousedown', () => {
 
-console.log("ok je touche");
+/* slider component mobile design start */
+sliderButton.addEventListener('touchstart', () => {
     isDragging = true;
-    document.addEventListener('mousemove', onMouseMove);
-    document.addEventListener('mouseup', onMouseUp);
+    document.addEventListener('touchmove', onTouchMove);
+    document.addEventListener('touchend', onTouchEnd);
 
 
 });
 
-function onMouseMove(event) {
-    /* if (!isDragging) return;
- */console.log("entree");
+function onTouchMove(event) {
+    if (!isDragging) return;
 
     const sliderRect = sliderBody.getBoundingClientRect();
-    let newLeft = event.clientX - sliderRect.left;
-    console.log("new left: "+event.clientX);
+
+    let newLeft = event.touches[0].clientX - sliderRect.left;
+    console.log("slider left:", sliderRect.left);
+    console.log("event client :", event.clientX);
     if (newLeft < 0) {
         newLeft = 0;
     } else if (newLeft > sliderRect.width) {
@@ -30,14 +31,17 @@ function onMouseMove(event) {
 
     sliderButton.style.left = `${newLeft}px`;
     const percentage = (newLeft / sliderRect.width) * 100;
+
     sliderBar.style.width = `${percentage}%`;
 
     // Update the slider length display
-    sliderLength.textContent = `${Math.round(percentage)}%`;
+    sliderLength.textContent = `${Math.round(percentage)}`;
 }
 
-function onMouseUp() {
+function onTouchEnd() {
     isDragging = false;
-    document.removeEventListener('mousemove', onMouseMove);
-    document.removeEventListener('mouseup', onMouseUp);
+    document.removeEventListener('touchmove', onTouchMove);
+    document.removeEventListener('touchend', onTouchEnd);
 }
+/* slider component mobile design end */
+
