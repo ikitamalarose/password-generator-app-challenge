@@ -79,6 +79,7 @@
   }
 
   .sliderComponent__body {
+    
     height: 0.5rem;
 
     background: var(--very-dark-grey);
@@ -87,6 +88,8 @@
     display: flex;
     flex-direction: row;
     align-items: center; 
+
+    position: relative;
   }
 
   .sliderComponent-bar {
@@ -103,6 +106,10 @@
 
     border-radius: 50%;
     background: var(--almost-white);
+
+    position: absolute;
+    left: 0;
+    top: -10px;
   }
 
   /* slider component end */
