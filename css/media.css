@@ -188,7 +188,7 @@
 
   .strengthComponent__indicator {
     text-transform: uppercase;
-    margin-right: 0.969rem;
+    margin-right: 0.4rem;
     width: max-content;
   }
 
@@ -202,14 +202,14 @@
     height: 1.75rem;
 
     border: 1px solid var(--almost-white);
-    background: none;
+    background: transparent;
   }
 
   .strength__state:not(:last-child) {
     margin-right: 0.5rem;
   }
 
-  .strength__state-red {
+  /* .strength__state-red {
     background: var(--red);
   }
 
@@ -223,7 +223,7 @@
 
   .strength__state-green {
     background: var(--neon-green);
-  }
+  } */
   /* strength indicator end */
 
   /* generate button */
