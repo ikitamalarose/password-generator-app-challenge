@@ -8,6 +8,8 @@ const colors = {
     green: "var(--neon-green)"
 }
 
+let selectedState = null;  // Variable pour stocker l'état sélectionné
+
 export function initState() {
 
     states.forEach(state => {
@@ -35,6 +37,7 @@ function handleStateClick(state) {
                     resetAllStates();
                     applyColorToStates(state, index, colors[color]);
                     updateIndicatorText(state.id);
+                    selectedState = state.id;
                 }
 
             });
@@ -83,3 +86,6 @@ function updateIndicatorText(stateId) {
     indicator.textContent = formatStateId(stateId).toUpperCase();
 }
 
+export function getSelectedState() {
+    return selectedState;
+}

@@ -51,6 +51,10 @@ function onTouchEnd() {
     document.removeEventListener('touchmove', onTouchMove);
     document.removeEventListener('touchend', onTouchEnd);
 }
+
+export function getSliderLength() {
+    return sliderLength.textContent;
+}
 /* slider component mobile design end */
 
 

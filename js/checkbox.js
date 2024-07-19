@@ -38,3 +38,7 @@ function deactivateButton(button) {
     const icon = button.querySelector('.checkboxStates-icon');
     icon.style.visibility = "hidden";
 }
+
+export function getSelectedButtons() {
+    return Array.from(buttons).filter(button => button.style.background === "var(--neon-green)");
+}
