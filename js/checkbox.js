@@ -40,5 +40,6 @@ function deactivateButton(button) {
 }
 
 export function getSelectedButtons() {
-    return Array.from(buttons).filter(button => button.style.background === "var(--neon-green)");
+    const selectedButtons = Array.from(buttons).filter(button => button.style.background === "var(--neon-green)");
+    return selectedButtons.length > 0 ? selectedButtons : null;
 }
