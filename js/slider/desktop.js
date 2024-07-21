@@ -1,19 +1,20 @@
+import { initState } from "../strength_state.js";
+
 const sliderButton = document.getElementById('slider-button');
 const sliderBar = document.getElementById('slider-bar');
 const sliderLength = document.getElementById('slider-length');
 const sliderBody = document.querySelector('.sliderComponent__body');
 
 const maxCharacterLength = 20; // Maximum character length
-const buttonWidth = 1.75 * 16; // Convert rem to pixels (assuming 1rem = 16px)
+const buttonWidth = 1.75 * 15; // Convert rem to pixels (assuming 1rem = 16px)
 
 let isDragging = false;
 
-export function initSliderMobile(){
-    sliderButton.addEventListener('touchstart', () => {
+export function initSliderDesktop(){
+    sliderButton.addEventListener('mousedown', () => {
         isDragging = true;
-        document.addEventListener('touchmove', onTouchMove);
-        document.addEventListener('touchend', onTouchEnd);
-    
+        document.addEventListener('mousemove', onMouseMove);
+        document.addEventListener('mouseup', onMouseUp);
     
     });
 }
@@ -21,12 +22,12 @@ export function initSliderMobile(){
 /* slider component mobile design start */
 
 
-function onTouchMove(event) {
+function onMouseMove(event) {
     if (!isDragging) return;
 
     const sliderRect = sliderBody.getBoundingClientRect();
 
-    let newLeft = event.touches[0].clientX - sliderRect.left;
+    let newLeft = event.clientX - sliderRect.left;
     
     if (newLeft < 0) {
         newLeft = 0;
@@ -46,10 +47,12 @@ function onTouchMove(event) {
     sliderLength.textContent = characterLength;
 }
 
-function onTouchEnd() {
+function onMouseUp() {
     isDragging = false;
-    document.removeEventListener('touchmove', onTouchMove);
-    document.removeEventListener('touchend', onTouchEnd);
+    document.removeEventListener('mousemove', onMouseMove);
+    document.removeEventListener('mouseup', onMouseUp);
+
+    initState(sliderLength.textContent);
 }
 
 export function getSliderLength() {

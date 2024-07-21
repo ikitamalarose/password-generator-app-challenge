@@ -1,10 +1,13 @@
 import { getSelectedButtons } from "./checkbox.js";
-import { getSelectedState } from "./strength_state.js";
-import { getSliderLength } from "./slider.js";
+import { getSliderLength } from "./slider/mobile.js";
+import { generatePassword } from './passwordGenerator.js';
+
 
 const generateButton = document.getElementById('generate-button');
 
 const errorMessage = document.querySelector('.error-message');
+
+const headerTextField = document.querySelector('.header-textField');
 
 let checkboxOptions = {
     uppercase: false,
@@ -13,68 +16,35 @@ let checkboxOptions = {
     symbol: false
 };
 
-/* export function initGenerateButton() {
-
-    generateButton.addEventListener('click', () => {
-        const checkboxChoices = getSelectedButtons();
-        const selectedState = getSelectedState();
-        const currentSliderLength = getSliderLength();
-
-        if (isValidSliderLength(currentSliderLength) && isValidState(selectedState) && hasValidCheckboxSelections(checkboxChoices)) {
-            hideErrorMessage();
-
-            console.log("slider length : ", currentSliderLength);
-            console.log("selected state : ", selectedState);
-            console.log("choix checkbox  : ", checkboxOptions);
-
-
-            checkboxChoices.forEach(checkbox => {
-
-                for (const key in checkboxOptions) {
-
-                    if (checkbox.id === key) {
-
-                        checkboxOptions[key] = true;
-                    }
-                }
-
-            });
-            console.log("tableau : ",checkboxOptions);
-        } else {
-            showErrorMessage();
-        }
-
-    });
-} */
-    export function initGenerateButton() {
-        generateButton.addEventListener('click', handleGenerateButtonClick);
-    }
-    
+export function initGenerateButton() {
+    generateButton.addEventListener('click', handleGenerateButtonClick);
+}
 
 function handleGenerateButtonClick() {
     const selectedCheckboxes = getSelectedButtons();
-    const selectedState = getSelectedState();
+
     const sliderLength = getSliderLength();
 
-    if (isValidSliderLength(sliderLength) && isValidState(selectedState) && hasValidCheckboxSelections(selectedCheckboxes)) {
+    if (isValidSliderLength(sliderLength) && hasValidCheckboxSelections(selectedCheckboxes)) {
+
         updateCheckboxOptions(selectedCheckboxes);
         hideErrorMessage();
 
-        console.log("Slider length: ", sliderLength);
-        console.log("Selected state: ", selectedState);
-        console.log("Checkbox options: ", checkboxOptions);
-        console.log("Options array: ", checkboxOptions);
+        const allCharacters = generatePassword(getCheckboxChoices()).join('');
+        let password = '';
+
+        for (let i = 0; i < sliderLength; i++) {
+            let randomIndex = Math.floor(Math.random() * allCharacters.length);
+            password += allCharacters[randomIndex];
+        }
+        updateHeaderTextField(password);
     } else {
         showErrorMessage();
     }
 }
 
 function isValidSliderLength(length) {
-    return length !== 0;
-}
-
-function isValidState(state) {
-    return state !== null;
+    return length > 0;
 }
 
 function hasValidCheckboxSelections(choices) {
@@ -95,7 +65,7 @@ function updateCheckboxOptions(selectedCheckboxes) {
 }
 
 function showErrorMessage() {
-    errorMessage.textContent = 'You must select at least one of each option.';
+    errorMessage.textContent = 'Select at least one option and character length > 0.';
     errorMessage.style.display = 'block';
 }
 
@@ -103,6 +73,15 @@ function hideErrorMessage() {
     errorMessage.style.display = 'none';
 }
 
-export function getCheckboxChoices(){
+export function getCheckboxChoices() {
     return checkboxOptions;
+}
+
+function updateHeaderTextField(text) {
+    const headerTextField = document.querySelector('.header-textField');
+    headerTextField.textContent = text;
+
+    if (text) {
+        headerTextField.removeAttribute('data-placeholder');
+    }
 }

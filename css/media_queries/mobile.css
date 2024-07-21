@@ -27,10 +27,10 @@
   }
 
   .error-message {
-   display: none;
+    display: none;
     color: var(--red);
     font-size: 1rem;
-   
+
   }
 
   .title {
@@ -50,6 +50,12 @@
     padding: 1rem;
     margin-bottom: 1rem;
   }
+
+  .header-textField:empty:before {
+    content: attr(data-placeholder);
+    color: var(--grey);
+  }
+
 
   .header-icon-button {
     background: none;
@@ -258,5 +264,8 @@
 
     margin-left: 1.5rem;
   }
+
   /* main content end */
 }
+
+

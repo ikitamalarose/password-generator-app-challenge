@@ -9,8 +9,6 @@ export function initializeCheckboxButtons() {
         });
 
     });
-
-
 }
 
 function toggleButtonDesign(button) {
@@ -28,10 +26,10 @@ function activateButton(button){
 
     const icon = button.querySelector('.checkboxStates-icon');
     icon.style.visibility = "visible";
-
 }
 
 function deactivateButton(button) {
+
     button.style.background = "transparent";
     button.style.border = "0.125rem solid var(--almost-white)";
 

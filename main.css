@@ -1,3 +1,4 @@
 @import './css/variables.css';
 @import './css/base.css';
-@import './css/media.css';
+@import './css/media_queries/mobile.css';
+@import './css/media_queries/desktop.css';

@@ -8,27 +8,24 @@ const colors = {
     green: "var(--neon-green)"
 }
 
-let selectedState = null;  // Variable pour stocker l'état sélectionné
+let selectedState = null;
 
-export function initState() {
+export function initState(strengthLenght) {
 
     states.forEach(state => {
 
-        state.addEventListener('click', () => {
-
+        if (state.id === getPasswordStrength(strengthLenght)) {
             handleStateClick(state);
-
-        });
-
+        }
     });
 }
 
 function handleStateClick(state) {
 
     const colorClasses = Object.keys(colors);
-    
+
     for (let index = 0; index < states.length; index++) {
-        
+
         if (states[index].id === state.id) {
 
             colorClasses.forEach(color => {
@@ -84,6 +81,21 @@ function resetAllStates() {
 
 function updateIndicatorText(stateId) {
     indicator.textContent = formatStateId(stateId).toUpperCase();
+}
+
+function getPasswordStrength(length) {
+    if (length >= 1 && length <= 5) {
+        return 'too_weak';
+    } else if (length >= 6 && length <= 8) {
+        return 'weak';
+    } else if (length >= 9 && length <= 12) {
+        return 'medium';
+    } else if (length >= 13 && length <= 20) {
+        return 'strong';
+    } else {
+        resetAllStates();
+        indicator.textContent = '';
+    }
 }
 
 export function getSelectedState() {
