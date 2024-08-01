@@ -6,10 +6,17 @@ export function copyText() {
     copiedTextButton.addEventListener('click', () => {
         const textToCopy = headerTextField.textContent;
 
-        navigator.clipboard.writeText(textToCopy).then(() => {
-            console.log('Text copied to clipboard: ', textToCopy);
-        }).catch(err => {
-            console.error('Could not copy text: ', err);
-        });
+        copyToClipboard(textToCopy);
+        /*  navigator.clipboard.writeText(textToCopy).then(() => {
+             console.log('Text copied to clipboard: ', textToCopy);
+         }).catch(err => {
+             console.error('Could not copy text: ', err);
+         }); */
     });
+}
+
+function copyToClipboard(textToCopy) {
+    navigator.clipboard.writeText(textToCopy)
+        .then(() => { console.log(`${textToCopy} was copied`) })
+        .catch(() => { console.error("Copy falied") });
 }
