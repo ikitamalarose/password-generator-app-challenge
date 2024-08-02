@@ -6,7 +6,7 @@ const sliderLength = document.getElementById('slider-length');
 const sliderBody = document.querySelector('.sliderComponent__body');
 
 const maxCharacterLength = 20; // Maximum character length
-const buttonWidth = 1.75 * 16; // Convert rem to pixels (assuming 1rem = 16px)
+const buttonWidth = 1.75 * 15; // Convert rem to pixels (assuming 1rem = 16px)
 
 let isDragging = false;
 
