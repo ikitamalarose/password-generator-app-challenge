@@ -1,5 +1,4 @@
 const headerCopiedText = document.getElementById('header-copied-text');
-// copyText.js
 export function copyText() {
     const copiedTextButton = document.getElementById('header-icon-button');
     const headerTextField = document.getElementById('header-textField');
@@ -7,10 +6,11 @@ export function copyText() {
     copiedTextButton.addEventListener('click', () => {
         const textToCopy = headerTextField.textContent;
 
-        copyToClipboard(textToCopy);
-        showCopiedText();
-        hideCopiedText();
-    
+        if (isEmpty(textToCopy)) {
+            copyToClipboard(textToCopy);
+            showCopiedText();
+        }
+
     });
 }
 
@@ -23,8 +23,12 @@ function copyToClipboard(textToCopy) {
 
 function showCopiedText() {
     headerCopiedText.style.visibility = "visible";
+    setTimeout(() => {
+        headerCopiedText.style.visibility = "hidden";
+    }, 1000);
 }
 
-function hideCopiedText(){
-    headerCopiedText.visibility="hidden";
+function isEmpty(textField) {
+    return textField.trim() !== "" ? true : false;
+
 }

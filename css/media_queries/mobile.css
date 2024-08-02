@@ -30,7 +30,6 @@
     display: none;
     color: var(--red);
     font-size: 1rem;
-
   }
 
   .title {
@@ -56,11 +55,23 @@
     color: var(--grey);
   }
 
-
   .header-icon-button {
     background: none;
     border: none;
     text-align: center;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-copied-text {
+    color: var(--neon-green);
+    text-transform: uppercase;
+
+    margin-right: 1rem;
+    visibility: hidden;
   }
 
   .header-icon {
@@ -127,6 +138,12 @@
     left: 0;
     top: -10px;
   }
+
+  .sliderComponent-button:hover {
+    cursor: pointer;
+    background: var(--very-dark-grey);
+    border: 1px solid var(--neon-green);
+}
 
   /* slider component end */
 
@@ -224,23 +241,6 @@
     margin-right: 0.5rem;
   }
 
-  /* .strength__state-red {
-    background: var(--red);
-  }
-
-  .strength__state-orange {
-    background: var(--orange);
-  }
-
-  .strength__state-yellow {
-    background: var(--yellow);
-  }
-
-  .strength__state-green {
-    background: var(--neon-green);
-  } */
-  /* strength indicator end */
-
   /* generate button */
   .generate-button {
     width: 19.438rem;
@@ -267,5 +267,3 @@
 
   /* main content end */
 }
-
-

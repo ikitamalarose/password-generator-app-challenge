@@ -5,15 +5,8 @@ const uppercaseLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const numbers = '0123456789';
 const symbols = '!@#$%^&*()_+[]{}|;:,.<>?';
 
-const characters = ['lowercase', 'uppercase', 'symbol', 'number'];
-
-/* const checkboxChoices = getCheckboxChoices();
-*/
-
 export function generatePassword(checkboxChoices) {
-    let password = '';
     let charset = [];
-
 
     for (const key in checkboxChoices) {
 
