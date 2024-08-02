@@ -1,17 +1,16 @@
+const headerCopiedText = document.getElementById('header-copied-text');
 // copyText.js
 export function copyText() {
-    const copiedTextButton = document.getElementById('header-copied-text');
+    const copiedTextButton = document.getElementById('header-icon-button');
     const headerTextField = document.getElementById('header-textField');
 
     copiedTextButton.addEventListener('click', () => {
         const textToCopy = headerTextField.textContent;
 
         copyToClipboard(textToCopy);
-        /*  navigator.clipboard.writeText(textToCopy).then(() => {
-             console.log('Text copied to clipboard: ', textToCopy);
-         }).catch(err => {
-             console.error('Could not copy text: ', err);
-         }); */
+        showCopiedText();
+        hideCopiedText();
+    
     });
 }
 
@@ -20,4 +19,12 @@ function copyToClipboard(textToCopy) {
     navigator.clipboard.writeText(textToCopy)
         .then(() => { console.log(`${textToCopy} was copied`) })
         .catch(() => { console.error("Copy falied") });
+}
+
+function showCopiedText() {
+    headerCopiedText.style.visibility = "visible";
+}
+
+function hideCopiedText(){
+    headerCopiedText.visibility="hidden";
 }
