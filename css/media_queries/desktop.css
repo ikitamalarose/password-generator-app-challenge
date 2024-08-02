@@ -1,7 +1,7 @@
 /* DESKTOP QUERY */
 @media (min-width: 769px) {
     body {
-        display: flex;
+        display: grid;
         place-content: center;
         height: 100vh;
     }
@@ -80,7 +80,7 @@
         width: 1.094rem;
         height: 1.25rem;
     }
-    
+
     /* main content start*/
 
     .card__content {
