@@ -15,6 +15,7 @@ export function copyText() {
     });
 }
 
+
 function copyToClipboard(textToCopy) {
     navigator.clipboard.writeText(textToCopy)
         .then(() => { console.log(`${textToCopy} was copied`) })
