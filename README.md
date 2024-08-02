@@ -30,13 +30,13 @@ Users should be able to:
 
 ### Screenshot
 
-![](./preview.jpg)
+![](./preview.png)
 
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Repository URL](https://github.com/ikitamalarose/password-generator-app-challenge.git)
+- Live Site URL: [Visit the website](https://password-generator-app-challenge.vercel.app/)
 
 ## My process
 
@@ -50,15 +50,69 @@ Users should be able to:
 
 ### What I learned
 
-```js
-```
+In this project, I gained a deeper understanding of handling touch events for mobile devices and their equivalent mouse events for desktop environments. I also implemented a feature to copy the generated password to the clipboard using the navigator.clipboard API. Here are some key points:
 
+- **Touch Events and Mouse Events** :
+To ensure the app works smoothly across both mobile and desktop devices, I learned to handle touch events (`touchstart`, `touchmove`, `touchend`) and their mouse event counterparts (`mousedown`, `mousemove`, `mouseup`). This allowed me to provide a consistent user experience regardless of the input method.
 
-### Continued development
+  - `touchstart`: This event is triggered when the user touches the screen. It's equivalent to the mousedown event on desktops.
 
+  - `touchmove`: This event is triggered when the user moves their finger across the screen. It's equivalent to the mousemove event on desktops.
 
-### Useful resources
+  - `touchend`: This event is triggered when the user lifts their finger off the screen. It's equivalent to the mouseup event on desktops.
 
+  ```js
+  // Handling touch events
+  element.addEventListener('touchstart', handleTouchStart);
+  element.addEventListener('touchmove', handleTouchMove);
+  element.addEventListener('touchend', handleTouchEnd);
+
+  // Handling mouse events
+  element.addEventListener('mousedown', handleMouseDown);
+  element.addEventListener('mousemove', handleMouseMove);
+  element.addEventListener('mouseup', handleMouseUp);
+
+  function handleTouchStart(event) {
+    // Handle touch start
+  }
+
+  function handleTouchMove(event) {
+    // Handle touch move
+  }
+
+  function handleTouchEnd(event) {
+    // Handle touch end
+  }
+
+  function handleMouseDown(event) {
+    // Handle mouse down
+  }
+
+  function handleMouseMove(event) {
+    // Handle mouse move
+  }
+
+  function handleMouseUp(event) {
+    // Handle mouse up
+  }
+  ```
+- **Copy to Clipboard** :
+
+  I also implemented a feature to copy the generated password to the clipboard using the navigator.clipboard API. This API provides a simple and secure way to interact with the clipboard.
+
+  Here's how I used the navigator.clipboard API:
+
+  ```js
+  function copyToClipboard(textToCopy) {
+    navigator.clipboard.writeText(textToCopy)
+        .then(() => {
+            console.log(`${textToCopy} was copied`);
+        })
+        .catch(err => {
+            console.error("Copy failed", err);
+        });
+
+  ```
 
 ## Author
 
