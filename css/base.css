@@ -13,3 +13,13 @@ body {
     color: var(--almost-white);
 }
 
+.attribution {
+    font-size: 0.688rem;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  .attribution a{
+      text-decoration: none;
+      color: var(--neon-green);
+  }
+  
